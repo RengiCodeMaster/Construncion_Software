@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    
+    <div class="imagenes">
+        <img src="imagenes/imagen.png" alt="Imagen de fondo"> 
+    </div>
+
+    <div class="login">
+        <div class="barra-login">
+            <span class="titulo-login">Login</span>
+        </div>
+        <form class="formulario">
+            <label for="usuario" class="etiqueta">Username</label>
+            <input type="text" id="usuario" name="usuario" class="campo" placeholder="Enter Username" required>
+            
+            <label for="contrasena" class="etiqueta">Password</label>
+            <input type="password" id="contrasena" name="contrasena" class="campo" placeholder="Enter Password" required>
+            
+            <div class="recordar">
+                <input type="checkbox" id="recordar" name="recordar">
+                <label for="recordar" class="etiqueta-recordar">Remember</label>
+            </div>
+            
+            <button type="submit" class="boton recordar-boton">Remember</button>
+            <button type="submit" class="boton login-boton">Login</button>
+        </form>
+    </div>
+</body>
+</html>
