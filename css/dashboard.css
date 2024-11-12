@@ -1,0 +1,125 @@
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    height: 100vh;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 20px; /* Reducido el padding para acercar las opciones */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ajustar las opciones hacia arriba */
+}
+
+.sidebar .logo img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%; /* Redondear los bordes del logo */
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar .menu li {
+    margin: 15px 0;
+}
+
+.sidebar .menu li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .menu li a:hover {
+    background-color: #34495e;
+}
+
+.material-icons {
+    margin-right: 10px;
+}
+
+/* Main content area */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+}
+
+header {
+    background-color: #2980b9;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+header h2 {
+    font-size: 1.2em;
+}
+
+/* Dashboard for data */
+.dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.image-container {
+    width: 45%;
+    height: auto;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .dashboard {
+        flex-direction: column;
+    }
+}
