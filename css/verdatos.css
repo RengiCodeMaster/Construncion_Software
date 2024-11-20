@@ -1,0 +1,96 @@
+/* Reinicio de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: transparent; /* Fondo transparente para integrarse al dashboard */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%; /* Ajusta la altura */
+    width: 100%; /* Ocupa todo el ancho */
+}
+
+/* Contenedor de la tabla */
+.table-container {
+    width: 100%; /* Ocupa todo el espacio disponible */
+    max-width: 1200px; /* Tamaño máximo para pantallas grandes */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Scroll horizontal si el contenido excede el ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Encabezado */
+h2 {
+    text-align: center;
+    color: #2980b9;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Tabla */
+table {
+    width: 100%; /* La tabla ocupa todo el ancho del contenedor */
+    border-collapse: collapse; /* Elimina espacios entre celdas */
+    background-color: #fff;
+}
+
+table th {
+    background-color: #2980b9; /* Encabezado azul */
+    color: white;
+    font-size: 1em;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    text-transform: uppercase;
+}
+
+table td {
+    padding: 15px;
+    font-size: 0.95em;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Filas alternadas */
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover para filas */
+table tr:hover {
+    background-color: #d1ecf1;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .table-container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,145 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background: #ecf0f1;
+    padding: 20px;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Contenedor general del formulario y tabla */
+form {
+    max-width: 600px; /* Incrementa el ancho del formulario */
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+/* Campos de entrada */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Botón de enviar */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3498db;
+}
+
+/* Spinner de carga */
+.loading-spinner {
+    display: none;
+    margin: 20px auto;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ddd;
+    border-top: 4px solid #2980b9;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Mensaje de éxito */
+.success-message {
+    display: none;
+    text-align: center;
+    color: #27ae60;
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+.success-check {
+    font-size: 2.5em;
+}
+
+/* Estilo para la tabla */
+table {
+    width: 100%; /* Ocupa todo el ancho del formulario */
+    margin-top: 20px;
+    border-collapse: collapse; /* Combina los bordes */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Encabezados de la tabla */
+th {
+    background: #2980b9;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Celdas de la tabla */
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Filas alternadas */
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Hover en filas */
+tr:hover {
+    background: #dff9fb;
+    color: #130f40;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    form {
+        max-width: 90%; /* Ajusta el formulario para pantallas pequeñas */
+    }
+
+    table {
+        font-size: 14px; /* Reduce el tamaño de fuente en pantallas pequeñas */
+    }
+
+    th, td {
+        padding: 10px; /* Ajusta el padding de las celdas */
+    }
+}

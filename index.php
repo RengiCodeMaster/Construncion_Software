@@ -1,3 +1,52 @@
+<?php
+    require_once $_SERVER['DOCUMENT_ROOT'].'/etc/config.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/models/connect/conexion.php';
+
+     session_start();
+    function get_connection() {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "dbsistema";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        return $conn;
+    }
+    
+    function get_user_credentials($username) {
+        require_once $_SERVER['DOCUMENT_ROOT'].'/models/connect/conexion.php';
+        $conn = get_connection();
+        $stmt = $conn->prepare("SELECT username, password FROM usuarios WHERE BINARY username = ? LIMIT 1");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+        $stmt->close();
+        $conn->close();
+        return $user;
+    }
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $v_username = $_POST["txtusername"] ?? '';
+        $v_password = $_POST["txtpassword"] ?? '';
+    
+        $user = get_user_credentials($v_username);
+    
+        if ($user && $v_password === $user['password']) {
+            $_SESSION["txtusername"] = $v_username;
+            header('Location: '.get_views('dashboard.php'));
+            exit;
+        } else {
+            header('Location: '.get_views('claveequivocada.php'));
+            exit;
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,51 +54,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/estilos.css">
+
 </head>
-<body>
-    <?php
-    session_start();
-    if ($_SERVER ["REQUEST_METHOD"] == "POST") {
-        //echo "<br>";
-        //echo "SE EMBIARON LAS SIGUIENTES VARIABLES: ";
-        //echo "<br>";
-        //echo $_POST["txtusername"];
-        //echo "<br>";
-        //echo $_POST["txtpassword"];
-        //echo "<br>";
-
-        $v_username = "";
-        $v_password = "";
-        if (isset($_POST["txtusername"]) ) {
-            $v_username = $_POST["txtusername"];
-            
-        }
-        if (isset($_POST["txtpassword"]) ) {
-            $v_password = $_POST["txtpassword"];
-        }
-
-        if (($v_username == "admin" && $v_password == "1234")) {
-            $_SESSION["txtusername"] = $v_username;
-            $_SESSION["txtpassword"]= $v_password;
-            header("Location: dashboard.php");
-           //echo "dashboard";
-        }else {
-            header("Location:claveequivocada.php");
-            //echo "clave equivocada";
-        }
-    }
-      //en caso de que el usuario no se haya logueado - precione directamente sobre la URL inicial
-    //ya hay un usuario logueado, asi que le pongo en pantalla
-    if (isset($_SESSION["txtusername"])) {
-        header("Location: dashboard.php");
-
-
-    }
-
-    ?>
-    
+<body> 
     <div class="imagenes">
-        <img src="imagenes/imagen.png" alt="Imagen de fondo"> 
+        <img src="img/imagen.png" alt="Imagen de fondo"> 
     </div>
 
     <div class="login">
