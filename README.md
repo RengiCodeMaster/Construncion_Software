@@ -1,115 +1,139 @@
-📘 Sistema de Ventas RENGIFO: Documentación Actualizada
-
+# 📘 Sistema de Ventas RENGIFO: Documentación Actualizada
 
 ¡Bienvenido a la documentación del Sistema de Ventas RENGIFO! Este proyecto fue desarrollado como parte de un curso de construcción de software para brindar una plataforma eficiente y profesional para la gestión de ventas. Aquí encontrarás todo lo necesario para entender, instalar y usar este sistema.
 
-📂 Estructura del Proyecto
+---
 
+## 📂 Estructura del Proyecto
 
 El proyecto está organizado en carpetas y archivos para facilitar el desarrollo y la escalabilidad.
 
-1. controllers/
-logout.php: 📤 Controla la salida del usuario del sistema cerrando la sesión y redirigiendo a la página de inicio de sesión.
-2. css/
+### 1. **controllers/**
+- **`logout.php`**: 📤 Controla la salida del usuario del sistema cerrando la sesión y redirigiendo a la página de inicio de sesión.
+- **`controladorIngresarUsuario.php`**: Maneja el registro de nuevos usuarios.
+- **`controladorUsuarios.php`**: Gestiona la interacción de los usuarios con la base de datos.
+
+---
+
+### 2. **css/**
 Archivos de estilo que definen la apariencia del sistema:
 
-🎨 dashboard.css: Estilos aplicados al panel principal (barra lateral, encabezados y diseño general).
+- **🎨 `dashboard.css`**: Estilos aplicados al panel principal (barra lateral, encabezados y diseño general).
+- **🗑️ `eliminardatos.css`**: Estilos para la vista de eliminación de datos.
+- **✏️ `modificardatos.css`**: Estilos para la vista de modificación de datos.
+- **📋 `verdatos.css`**: Estilos para las tablas de datos.
+- **📥 `ingresardatos.css`**: Estilos para los formularios de ingreso de datos.
+- **🌐 `estilos.css`**: Estilos globales compartidos entre diferentes vistas.
 
-🗑️ eliminardatos.css: Estilos para la vista de eliminación de datos.
+---
 
-✏️ modificardatos.css: Estilos para la vista de modificación de datos.
+### 3. **etc/**
+- **`config.php`**: ⚙️ Archivo de configuración que define:
+  - Credenciales de la base de datos (host, usuario, contraseña, nombre).
+  - Funciones globales como `get_urlBase()` para manejar rutas dinámicas.
 
-📋 verdatos.css: Estilos para las tablas de datos.
+---
 
-📥 ingresardatos.css: Estilos para los formularios de ingreso de datos.
+### 4. **img/**
+Imágenes utilizadas en el sistema:
 
-🌐 estilos.css: Estilos globales compartidos entre diferentes vistas.
+- **🖼️ `imagen.png`, `logo.png`, `logo1.png`**: Logos y recursos visuales para la barra lateral y encabezados.
 
-3. etc/
-config.php: ⚙️ Archivo de configuración que define:
-Credenciales de la base de datos (host, usuario, contraseña, nombre).
-Funciones globales como get_urlBase() para manejar rutas dinámicas.
-4. img/
-   
-🖼️ imagen.png, logo.png, logo1.png: Imágenes utilizadas en el sistema (como logos para la barra lateral y encabezados).
+---
 
-6. js/
-⚠️ Por ahora no se utiliza JavaScript en este sistema. Esta carpeta está preparada para futuras integraciones de interactividad, como validaciones de formularios o animaciones.
+### 5. **js/**
+Archivos JavaScript para animaciones e interactividad:
 
-7. models/connect/
-8. 
-conexion.php: 🔗 Clase que maneja la conexión con la base de datos mediante PDO, asegurando seguridad y eficiencia al interactuar con los datos.
+- **⚡ `animacionIngresar.js`**: Maneja la animación de carga al enviar formularios.
+- **📊 `dashboard.js`**: Controles interactivos en el panel principal.
 
-10. views/
+---
+
+### 6. **models/connect/**
+- **🔗 `conexion.php`**: Clase que maneja la conexión con la base de datos mediante PDO, asegurando seguridad y eficiencia al interactuar con los datos.
+- **📄 `modelousuario.php`**: Modelos para operaciones CRUD relacionadas con los usuarios.
+
+---
+
+### 7. **views/**
 Aquí están las vistas del sistema, cada una con una función específica:
 
-🖥️ dashboard.php: Panel principal que contiene la barra lateral y muestra el contenido dinámico según la opción seleccionada.
+- **🖥️ `dashboard.php`**: Panel principal que contiene la barra lateral y muestra el contenido dinámico según la opción seleccionada.
+- **✅ `claveequivocada.php`**: Muestra un mensaje de error cuando las credenciales son incorrectas.
+- **📊 `verdatos.php`**: Vista que muestra los datos registrados en formato de tabla.
+- **📥 `ingresardatos.php`**: Formulario para agregar nuevos datos al sistema.
+- **✏️ `modificardatos.php`**: Vista para editar datos existentes.
+- **🗑️ `eliminardatos.php`**: Permite eliminar registros específicos.
 
-✅ claveequivocada.php: Muestra un mensaje de error cuando las credenciales son incorrectas.
+---
 
-📊 verdatos.php: Vista que muestra los datos registrados en formato de tabla.
-
-📥 ingresardatos.php: Formulario para agregar nuevos datos al sistema.
-
-✏️ modificardatos.php: Vista para editar datos existentes.
-
-🗑️ eliminardatos.php: Permite eliminar registros específicos.
-
-8. test/
+### 8. **test/**
 ⚙️ Carpeta reservada para pruebas futuras. Aquí podrías incluir scripts para validar funcionalidades del sistema o experimentos.
 
-🎮 Funcionalidades
-🔐 Inicio de Sesión
+---
 
-Los usuarios deben autenticarse para acceder al sistema.
+## 🎮 Funcionalidades
 
-📊 Gestión de Ventas
+### 🔐 **Inicio de Sesión**
+- Los usuarios deben autenticarse para acceder al sistema.
 
-Navega entre estas opciones desde el dashboard:
+### 📊 **Gestión de Ventas**
+- **Ver Datos**: Muestra una tabla con los registros actuales.
+- **Ingresar Datos**: Formulario para añadir nuevos datos al sistema.
+- **Modificar Datos**: Edita registros existentes.
+- **Eliminar Datos**: Borra datos innecesarios.
 
-Ver Datos: Muestra una tabla con los registros actuales.
+---
 
-Ingresar Datos: Formulario para añadir nuevos datos al sistema.
+## ✨ Diseño
 
-Modificar Datos: Edita registros existentes.
+El sistema utiliza **CSS3** para un diseño limpio y profesional:
 
-Eliminar Datos: Borra datos innecesarios.
+### 🌈 **Colores**
+- Barra lateral: Azul oscuro.
+- Encabezados: Azul brillante.
+- Fondos: Tonos grises suaves.
 
-✨ Diseño
+### 📱 **Diseño Responsivo**
+- Compatible con dispositivos móviles, tablets y pantallas de escritorio.
 
-El sistema utiliza CSS3 para un diseño limpio y profesional:
+### 🎨 **Animaciones**
+- Transiciones suaves en botones y tablas.
+- Animación de carga al enviar formularios.
 
-🌈 Colores:
+---
 
-Barra lateral: Azul oscuro.
-Encabezados: Azul brillante.
-Fondos: Tonos grises suaves.
+## 🚀 Instalación
 
-📱 Diseño Responsivo:
+### Requisitos:
+- **Servidor local** (Laragon, XAMPP, WAMP).
+- **PHP 7.4+**.
+- **Base de datos MySQL**.
 
-Compatible con dispositivos móviles, tablets y pantallas de escritorio.
+### Pasos:
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/RengiCodeMaster/Construncion_Software.git
 
-🎨 Animaciones:
+2. Configura la base de datos en el archivo etc/config.php:
+   
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'nombre_base_datos');
+define('DB_USER', 'root');
+define('DB_PASS', '');
 
-Transiciones suaves en botones y tablas.
+3. Importa el archivo SQL con la estructura de la base de datos (si está disponible).
+4. Accede al sistema desde tu navegador: http://localhost/Construncion_Software/
 
 📂 Organización del Código
-
 El sistema sigue los principios de:
+
 Clean Code: Código limpio y fácil de entender.
-SOLID: Cada componente tiene una única responsabilidad.
+SOLID: Cada componente tiene una única responsabilidad
 
 📧 Contacto
 ¿Tienes dudas o sugerencias? ¡Contáctame!
 
 Correo: juan.rengifofretel@unas.edu.pe
-
-Espero que esta documentación te sea útil. Si necesitas más ayuda, ¡avísame!
-
-
-
-
-
-
-
+GitHub: RengiCodeMaster
 
