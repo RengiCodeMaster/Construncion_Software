@@ -1,67 +1,120 @@
-/* Estilo general */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background: #ecf0f1;
-    padding: 20px;
-    color: #333;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    box-sizing: border-box;
 }
 
-h2 {
-    text-align: center;
-    color: #2c3e50;
-}
-
-/* Contenedor general del formulario y tabla */
-form {
-    max-width: 600px; /* Incrementa el ancho del formulario */
-    margin: 0 auto;
-    background: white;
+/* Contenedor del Formulario */
+.container {
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 100px auto; /* Centrar horizontalmente y dejar espacio desde el encabezado */
     padding: 20px;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Etiquetas */
-label {
-    display: block;
-    margin-bottom: 5px;
+/* Título */
+.container h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
     font-weight: bold;
-    color: #34495e;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
 }
 
-/* Campos de entrada */
-input {
-    width: 100%;
+/* Mensajes */
+.message {
+    background-color: #e74c3c;
+    color: #ffffff;
     padding: 10px;
+    text-align: center;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
     border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Botón de enviar */
-button {
-    width: 100%;
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    color: #34495e;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input {
     padding: 10px;
-    background: #2980b9;
-    color: white;
+    font-size: 1rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #1e88e5;
+    box-shadow: 0 0 5px rgba(30, 136, 229, 0.5);
+}
+
+/* Botón */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #1e88e5;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background: #3498db;
+    background-color: #1565c0;
+    transform: scale(1.05);
 }
 
-/* Spinner de carga */
-.loading-spinner {
-    display: none;
-    margin: 20px auto;
-    width: 40px;
-    height: 40px;
-    border: 4px solid #ddd;
-    border-top: 4px solid #2980b9;
+button i {
+    margin-right: 5px;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: none; /* Oculto por defecto */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Spinner */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top-color: #1e88e5;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -75,71 +128,25 @@ button:hover {
     }
 }
 
-/* Mensaje de éxito */
-.success-message {
-    display: none;
-    text-align: center;
-    color: #27ae60;
-    font-size: 1.2em;
-    margin-top: 15px;
-}
-
-.success-check {
-    font-size: 2.5em;
-}
-
-/* Estilo para la tabla */
-table {
-    width: 100%; /* Ocupa todo el ancho del formulario */
-    margin-top: 20px;
-    border-collapse: collapse; /* Combina los bordes */
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-/* Encabezados de la tabla */
-th {
-    background: #2980b9;
-    color: white;
-    padding: 15px;
-    text-align: left;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* Celdas de la tabla */
-td {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-    font-size: 1em;
-    color: #555;
-}
-
-/* Filas alternadas */
-tr:nth-child(even) {
-    background: #f9f9f9;
-}
-
-/* Hover en filas */
-tr:hover {
-    background: #dff9fb;
-    color: #130f40;
-}
-
 /* Responsividad */
 @media (max-width: 768px) {
-    form {
-        max-width: 90%; /* Ajusta el formulario para pantallas pequeñas */
+    .container {
+        padding: 15px;
     }
 
-    table {
-        font-size: 14px; /* Reduce el tamaño de fuente en pantallas pequeñas */
+    h1 {
+        font-size: 1.5rem;
     }
 
-    th, td {
-        padding: 10px; /* Ajusta el padding de las celdas */
+    label {
+        font-size: 0.9rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
     }
 }

@@ -1,39 +1,45 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/etc/config.php';
 
-class conexion
+class Conexion
 {
     private $host;
     private $namedb;
     private $userdb;
     private $passworddb;
     private $charset;
-    private $pdo;
+    private  static $pdo=null;
+    
 
-    public function __construct($host, $namedb, $userdb, $passworddb, $charset = 'utf8')
+    public function __construct()
     {
-        $this->host = $host;
-        $this->namedb = $namedb;
-        $this->userdb = $userdb;
-        $this->passworddb = $passworddb;
-        $this->charset = $charset;
+        $this->host = DB_HOST;
+        $this->namedb = DB_NAME;
+        $this->userdb = DB_USER;
+        $this->passworddb = DB_PASS;
+        $this->charset = 'utf8';	
+        if(self::$pdo==null ){
+            $this->conectar();
+        }
     }
 
     private function conectar()
     {
         $dsn = "mysql:host={$this->host};dbname={$this->namedb};charset={$this->charset}";
         try {
-            $this->pdo = new PDO($dsn, $this->userdb, $this->passworddb);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            self::$pdo = new PDO($dsn, $this->userdb, $this->passworddb);
+            self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die('Hubo un error al conectar con la base de datos: ' . $e->getMessage());
         }
     }
 
-    public function obtenerconexion()
+    public  static function obtenerconexion()
     {
-        $this->conectar();
-        return $this->pdo;
+        if (self::$pdo == null) {
+            new self();
+        }
+        return self::$pdo;
     }
 
     public function contesta()
@@ -41,5 +47,12 @@ class conexion
         $dsn = "mysql:host={$this->host};dbname={$this->namedb};charset={$this->charset}";
         return $dsn;
     }
-    
 }
+    try{
+     $Conexion = Conexion::obtenerconexion();
+     //echo "Conexion exitosa";
+    }catch(Exception $e){
+        echo "ERROR".$e->getMessage();
+    }
+    
+

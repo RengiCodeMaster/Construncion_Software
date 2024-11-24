@@ -1,96 +1,93 @@
-/* Reinicio de estilos básicos */
-* {
+/* General Styles */
+body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
     box-sizing: border-box;
 }
 
-/* Contenedor principal del cuerpo */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: transparent; /* Fondo transparente para integrarse al dashboard */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100%; /* Ajusta la altura */
-    width: 100%; /* Ocupa todo el ancho */
-}
-
-/* Contenedor de la tabla */
-.table-container {
-    width: 100%; /* Ocupa todo el espacio disponible */
-    max-width: 1200px; /* Tamaño máximo para pantallas grandes */
-    margin: 0 auto; /* Centra el contenido horizontalmente */
+/* Centrado del contenido */
+.content {
+    max-width: 900px; /* Ancho máximo del contenido */
+    margin: 100px auto 0; /* Centrar horizontalmente y dar espacio desde el encabezado */
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow-x: auto; /* Scroll horizontal si el contenido excede el ancho */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Encabezado */
-h2 {
+/* Título */
+.content h1 {
     text-align: center;
-    color: #2980b9;
-    font-size: 2em;
+    font-size: 2rem;
+    color: #2c3e50;
     margin-bottom: 20px;
+    font-weight: bold;
     text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1.5px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
 }
 
 /* Tabla */
 table {
-    width: 100%; /* La tabla ocupa todo el ancho del contenedor */
-    border-collapse: collapse; /* Elimina espacios entre celdas */
-    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-table th {
-    background-color: #2980b9; /* Encabezado azul */
-    color: white;
-    font-size: 1em;
-    padding: 15px;
+thead th {
+    background-color: #34495e;
+    color: #ffffff;
+    font-size: 1rem;
     text-align: left;
-    border-bottom: 2px solid #ddd;
-    text-transform: uppercase;
+    padding: 10px;
+    border-bottom: 3px solid #2c3e50;
 }
 
-table td {
-    padding: 15px;
-    font-size: 0.95em;
-    color: #555;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-}
-
-/* Filas alternadas */
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Hover para filas */
-table tr:hover {
-    background-color: #d1ecf1;
+tbody tr {
+    border-bottom: 1px solid #e0e0e0;
     transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody td {
+    padding: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #34495e;
+}
+
+/* Iconos */
+thead th i,
+tbody td.icon {
+    color: #1e88e5;
 }
 
 /* Responsividad */
 @media (max-width: 768px) {
-    .table-container {
-        padding: 10px;
+    .content {
+        padding: 15px;
     }
 
-    h2 {
-        font-size: 1.5em;
+    table {
+        font-size: 0.9rem;
     }
 
-    table th, table td {
-        padding: 10px;
+    thead th {
+        font-size: 0.9rem;
+    }
+
+    tbody td {
+        font-size: 0.8rem;
+    }
+
+    .content h1 {
+        font-size: 1.5rem;
     }
 }

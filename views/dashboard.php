@@ -14,7 +14,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/connect/conexion.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Ventas</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo get_urlBase('css/dashboard.css') ?>">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo get_js('dashboard.js') ?>">
+    <link rel="stylesheet" href="<?php echo get_css('dashboard.css') ?>">
 </head>
 <body>
 
@@ -30,7 +32,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/connect/conexion.php';
                 <li><a href="?opcion=Ingresar"><span class="material-icons">add_circle</span>Ingresar Datos</a></li>
                 <li><a href="?opcion=Modificar"><span class="material-icons">edit</span>Modificar Datos</a></li>
                 <li><a href="?opcion=Eliminar"><span class="material-icons">delete</span>Eliminar datos</a></li>
-                <li><a href="<?php echo get_controllers('/logout.php') ?>"><span class="material-icons">exit_to_app</span>Salir</a></li>
+                <li><a href="<?php echo get_controllers('logout.php') ?>"><span class="material-icons">exit_to_app</span>Salir</a></li>
             </ul>
         </aside>
 
@@ -51,10 +53,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/connect/conexion.php';
                             break;
                         
                         case 'Ver':
-                            echo "<iframe src='".get_views("verdatos.php")."'></iframe>";
+                            echo "<iframe src='".get_controllers("controladorUsuarios.php")."'></iframe>";
                             break;
                         case 'Ingresar':
-                            echo "<iframe src='".get_views("ingresardatos.php")."'></iframe>";
+                            echo "<iframe src='".get_controllers("controladorIngresarUsuario.php")."'></iframe>";
                             break;
                         case 'Modificar':
                             echo "<iframe src='".get_views("modificardatos.php")."'></iframe>";
