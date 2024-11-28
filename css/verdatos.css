@@ -10,8 +10,8 @@ body {
 
 /* Centrado del contenido */
 .content {
-    max-width: 900px; /* Ancho máximo del contenido */
-    margin: 100px auto 0; /* Centrar horizontalmente y dar espacio desde el encabezado */
+    max-width: 900px; 
+    margin: 100px auto 0; 
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;

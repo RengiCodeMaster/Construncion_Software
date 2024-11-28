@@ -1,12 +1,6 @@
 <?php
-session_start();
-if (!isset($_SESSION["txtusername"])) {
-    header('location:' . get_urlBase('index.php'));
-}
-
-require_once $_SERVER['DOCUMENT_ROOT'] . '/etc/config.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/models/connect/conexion.php';
-?>
+function vistaDashboard()
+{ ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -59,10 +53,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/connect/conexion.php';
                             echo "<iframe src='".get_controllers("controladorIngresarUsuario.php")."'></iframe>";
                             break;
                         case 'Modificar':
-                            echo "<iframe src='".get_views("modificardatos.php")."'></iframe>";
+                            echo "<iframe src='".get_controllers("controladormodificarusuario.php")."'></iframe>";
                             break;
                         case 'Eliminar':
-                            echo "<iframe src='".get_views("eliminardatos.php")."'></iframe>";
+                            echo "<iframe src='".get_controllers("controladoreliminarusuario.php")."'></iframe>";
                             break;
                         default:
                             echo "<p>Opción no válida.</p>";
@@ -75,3 +69,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/connect/conexion.php';
     </div>
 </body>
 </html>  
+<?php
+
+} ?>

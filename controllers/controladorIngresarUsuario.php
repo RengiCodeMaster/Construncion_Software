@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once $_SERVER["DOCUMENT_ROOT"] . '/models/modeloUsuario.php';
-require_once $_SERVER["DOCUMENT_ROOT"] . '/views/vistaIngresarUsuario.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/views/vistaingresarUsuario.php';
 
 if (!isset($_SESSION["txtusername"])) {
     header('Location: ' . get_UrlBase('index.php'));
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $modeloUsuario->agregarusuario($tmpdatusername, $tmpdatpassword, $tmpdatperfil);
-        $message = "<p style='color: green;'>Usuario registrado exitosamente.</p>";
+        $message = "<p style='color:  white;'>Usuario registrado exitosamente.</p>";
     } catch (PDOException $e) {
         $message = "<p style='color: red;'>Hubo un error: " . $e->getMessage() . "</p>";
     }

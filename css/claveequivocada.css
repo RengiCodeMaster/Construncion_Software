@@ -1,4 +1,4 @@
-/* Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -38,12 +38,12 @@ a {
 a:hover {
     background-color: #e0e8f0;
     color: #2c3e50;
-    transform: scale(1.05); /* Efecto de escalado al pasar el ratón */
+    transform: scale(1.05); 
 }
 
 a:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Efecto de enfoque */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); 
 }
 
 /* Responsive Styles */
