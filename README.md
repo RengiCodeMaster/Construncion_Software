@@ -10,8 +10,15 @@ El proyecto está organizado en carpetas y archivos para facilitar el desarrollo
 
 ### 1. **controllers/**
 - **`logout.php`**: 📤 Controla la salida del usuario del sistema cerrando la sesión y redirigiendo a la página de inicio de sesión.
-- **`controladorIngresarUsuario.php`**: Maneja el registro de nuevos usuarios.
-- **`controladorUsuarios.php`**: Gestiona la interacción de los usuarios con la base de datos.
+- **`controladorIngresarUsuario.php`**: 📝 Maneja el registro de nuevos usuarios, validando y almacenando sus datos en la base de datos.
+- **`controladorUsuarios.php`**: 👥 Gestiona la interacción de los usuarios con la base de datos, como listar, editar y eliminar usuarios.
+- **`controladorEliminarUsuario.php`**: 🚮 Permite eliminar un usuario específico validando el nombre ingresado y actualizando la base de datos.
+- **`controladorModificarUsuario.php`**: ✏️ Permite modificar datos de un usuario, como nombre, contraseña o perfil, gestionando vistas para búsqueda y edición.
+- **`controladorLogin.php`**: 🔑 Maneja el inicio de sesión validando credenciales y estableciendo la sesión para el usuario.
+- **`controladorDashboard.php`**: 📊 Redirige al panel principal del sistema tras un inicio de sesión exitoso, mostrando estadísticas y accesos rápidos.
+- **`controladorBuscarUsuario.php`**: 🔍 Realiza búsquedas de usuarios en la base de datos basándose en criterios como nombre o ID.
+
+
 
 ---
 
@@ -23,7 +30,7 @@ Archivos de estilo que definen la apariencia del sistema:
 - **✏️ `modificardatos.css`**: Estilos para la vista de modificación de datos.
 - **📋 `verdatos.css`**: Estilos para las tablas de datos.
 - **📥 `ingresardatos.css`**: Estilos para los formularios de ingreso de datos.
-- **🌐 `estilos.css`**: Estilos globales compartidos entre diferentes vistas.
+- **🌐 `login.css`**: Estilo del login.
 
 ---
 
@@ -58,12 +65,13 @@ Archivos JavaScript para animaciones e interactividad:
 ### 7. **views/**
 Aquí están las vistas del sistema, cada una con una función específica:
 
-- **🖥️ `dashboard.php`**: Panel principal que contiene la barra lateral y muestra el contenido dinámico según la opción seleccionada.
 - **✅ `claveequivocada.php`**: Muestra un mensaje de error cuando las credenciales son incorrectas.
-- **📊 `verdatos.php`**: Vista que muestra los datos registrados en formato de tabla.
-- **📥 `ingresardatos.php`**: Formulario para agregar nuevos datos al sistema.
-- **✏️ `modificardatos.php`**: Vista para editar datos existentes.
-- **🗑️ `eliminardatos.php`**: Permite eliminar registros específicos.
+- **🖥️ `vistadashboard.php`**: Panel principal que contiene la barra lateral y muestra el contenido dinámico según la opción seleccionada.
+- **🗑️ `vistaeliminarUsuario.php`**: Permite eliminar un usuario específico, validando el nombre ingresado.
+- **📥 `vistaingresarUsuario.php`**: Formulario para agregar nuevos usuarios al sistema.
+- **🔑 `vistalogin.php`**: Formulario de inicio de sesión para que los usuarios accedan al sistema.
+- **✏️ `vistamodificarUsuario.php`**: Vista para editar datos de usuarios existentes, como nombre o contraseña.
+- **📊 `vistaUsuario.php`**: Vista que muestra la lista de usuarios registrados y permite su gestión.
 
 ---
 
