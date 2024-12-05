@@ -54,5 +54,7 @@ class Conexion
     }catch(Exception $e){
         echo "ERROR".$e->getMessage();
     }
+
+    ?>
     
 

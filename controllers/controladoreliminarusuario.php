@@ -1,5 +1,8 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+ 
 require_once $_SERVER["DOCUMENT_ROOT"] . '/models/modeloUsuario.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/views/vistaeliminarUsuario.php';
 
@@ -23,3 +26,4 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || ($_SERVER["REQUEST_METHOD"] == "GE
 }
 
 mostrarFormularioEliminacion($mensaje);
+?>

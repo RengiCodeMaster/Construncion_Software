@@ -1,6 +1,11 @@
 <?php
-function vistaLogin($error = '') {
-    ?>
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/etc/config.php';
+  function vistaLogin(){
+      if (!empty($mensaje)) {
+          echo $mensaje;
+      } else {
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,9 +34,10 @@ function vistaLogin($error = '') {
             <button type="submit" class="boton login-boton">Login</button>
         </form>
     </div>
+    <script src="<?php echo get_js('validacionLogin.js') ?>"></script>
 </body>
 </html>
 <?php
 
-}
+}}
 ?>

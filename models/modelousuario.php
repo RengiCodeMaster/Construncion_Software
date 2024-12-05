@@ -50,4 +50,21 @@ class modelousuario
         $query->execute([$username, $password, $perfil, $id]);
         return $query->rowCount() > 0;
     }
+    public function existeUsuario($username)
+    {
+        $query="select id,username,password,perfil from usuarios where username=:username";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    public function validarCredenciales($username) {
+        $query = "select id,username,password,perfil from usuarios where username=:username";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);//mejora pendiente utilizar algun algoritmo de encriptacion
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
+ 
+

@@ -1,5 +1,5 @@
 <?php
-function vistaDashboard()
+function dashboard($contenido)
 { ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,30 +39,7 @@ function vistaDashboard()
             <section class="dashboard">
                 <?php
                 // Manejo de opciones seleccionadas
-                if (isset($_GET['opcion'])) {
-                    $opcion = $_GET['opcion'];
-                    switch ($opcion) { 
-                        case 'inicio':
-                            echo "<p>Bienvenido al Sistema de Ventas. Seleccione una opción del menú.</p>";
-                            break;
-                        
-                        case 'Ver':
-                            echo "<iframe src='".get_controllers("controladorUsuarios.php")."'></iframe>";
-                            break;
-                        case 'Ingresar':
-                            echo "<iframe src='".get_controllers("controladorIngresarUsuario.php")."'></iframe>";
-                            break;
-                        case 'Modificar':
-                            echo "<iframe src='".get_controllers("controladormodificarusuario.php")."'></iframe>";
-                            break;
-                        case 'Eliminar':
-                            echo "<iframe src='".get_controllers("controladoreliminarusuario.php")."'></iframe>";
-                            break;
-                        default:
-                            echo "<p>Opción no válida.</p>";
-                            break;
-                    }
-                } 
+                echo $contenido;
                 ?>
             </section>
         </main>
@@ -70,5 +47,4 @@ function vistaDashboard()
 </body>
 </html>  
 <?php
-
-} ?>
+} 

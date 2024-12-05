@@ -50,6 +50,15 @@ function get_js($arg1)
 {
     return get_path('js', $arg1);
 }
+function get_views_disk($arg1)
+{
+    return $_SERVER['DOCUMENT_ROOT'].'/views/'.$arg1;
+}
+function get_controllers_disk($arg1)
+{
+    return $_SERVER['DOCUMENT_ROOT'].'/controllers/'.$arg1;
+}
+
 //echo 'algo';
 //echo'<br>';
 //echo get_UrlBase('');

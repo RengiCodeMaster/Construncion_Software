@@ -11,7 +11,7 @@ function mostrarFormularioIngreso($mensaje = '')
         <title>Registrar Usuario</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <script src="<?php echo get_js('animacionIngresar.js'); ?>"></script>
-        <link rel="stylesheet" href=<?php echo get_css('ingresardatos.css') ?>>
+        <link rel="stylesheet" href="<?php echo get_css('ingresardatos.css'); ?>">
     </head>
 
     <body>
